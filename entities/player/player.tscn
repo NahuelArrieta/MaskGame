@@ -24,4 +24,5 @@ script = ExtResource("1_symyc")
 shape = SubResource("RectangleShape2D_sfv1e")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_sglur")
