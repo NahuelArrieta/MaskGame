@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://npn26jw3fcgm" path="res://entities/player/player.tscn" id="1_1ccbj"]
 [ext_resource type="Texture2D" uid="uid://2c440sfv10qv" path="res://platform.png" id="2_rnme4"]
-[ext_resource type="PackedScene" uid="uid://bf1oj0pv6ufrt" path="res://entities/camera/spootlight.tscn" id="3_yo1qe"]
+[ext_resource type="PackedScene" uid="uid://c2ptupymdpeas" path="res://entities/camera/spootlight.tscn" id="3_yo1qe"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_yo1qe"]
 

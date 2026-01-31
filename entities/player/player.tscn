@@ -1,21 +1,60 @@
-[gd_scene load_steps=8 format=3 uid="uid://npn26jw3fcgm"]
+[gd_scene load_steps=14 format=3 uid="uid://npn26jw3fcgm"]
 
 [ext_resource type="Script" uid="uid://b78bww5c8bahl" path="res://entities/player/player.gd" id="1_symyc"]
-[ext_resource type="Texture2D" uid="uid://xmw2b1bg1cqc" path="res://icon.svg" id="2_abrql"]
+[ext_resource type="Texture2D" uid="uid://dgw00jilbh78" path="res://Gemini_Generated_Image_l1i1stl1i1stl1i1 (1) 1 (3).png" id="2_sglur"]
 [ext_resource type="PackedScene" uid="uid://cghftgvw3dec5" path="res://entities/camera/camera.tscn" id="3_sglur"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sfv1e"]
 size = Vector2(32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_sglur"]
+atlas = ExtResource("2_sglur")
+region = Rect2(667, 0, 131, 189)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bls4j"]
+atlas = ExtResource("2_sglur")
+region = Rect2(536, 0, 131, 189)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fkugw"]
+atlas = ExtResource("2_sglur")
+region = Rect2(405, 0, 131, 189)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8fjmc"]
+atlas = ExtResource("2_sglur")
+region = Rect2(274, 0, 131, 189)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qiwj3"]
+atlas = ExtResource("2_sglur")
+region = Rect2(143, 0, 131, 189)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_26q78"]
+atlas = ExtResource("2_sglur")
+region = Rect2(12, 0, 131, 189)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_sglur"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_abrql")
+"texture": SubResource("AtlasTexture_sglur")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bls4j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fkugw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8fjmc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qiwj3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_26q78")
 }],
 "loop": true,
-"name": &"default",
-"speed": 5.0
+"name": &"idle",
+"speed": 9.0
 }]
 
 [sub_resource type="Gradient" id="Gradient_sglur"]
@@ -35,12 +74,14 @@ script = ExtResource("1_symyc")
 [node name="Collision" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_sfv1e")
 
-[node name="Sprite" type="AnimatedSprite2D" parent="."]
+[node name="Animation" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -7)
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_sglur")
+animation = &"idle"
 
 [node name="Camera" parent="." instance=ExtResource("3_sglur")]
 
-[node name="PointLight2D" type="PointLight2D" parent="."]
+[node name="Light" type="PointLight2D" parent="."]
 blend_mode = 2
 texture = SubResource("GradientTexture2D_bls4j")
