@@ -3,7 +3,9 @@ extends CharacterBody2D
 @export var speed = 70.0
 @export var jump_velocity = -450.0
 
+
 var current_mask: String = ""
+var gravity_direction = 1
 
 func _ready():
 	Global.mask_changed.connect(on_mask_changed)
@@ -24,17 +26,18 @@ func _process(_delta):
 
 func _physics_process(delta):
 	
-	if not is_on_floor():
-		velocity.y += Global.gravity * delta 
+	if not is_on_the_floor():
+		velocity.y += Global.gravity * delta * gravity_direction
+		
 	
 
-	if is_on_floor() and Input.is_action_just_pressed("JUMP"):
-		velocity.y = jump_velocity
+	if is_on_the_floor() and Input.is_action_just_pressed("JUMP"):
+		velocity.y = jump_velocity * gravity_direction 
 		# $Jump.play()
 	
 
 	var direction = Input.get_axis("LEFT",  "RIGHT") 
-	velocity.x = direction * speed
+	velocity.x = direction * speed * gravity_direction
 	
 	move_and_slide()
 	update_animation()
@@ -61,4 +64,19 @@ func update_animation():
 		$Animation.flip_h = velocity.x < 0
 
 func on_mask_changed(mask: String):
+	## Fire mask
 	$Light.visible = !(mask == Global.MASK_FIRE)
+	
+	## Gravity mask
+	if mask == Global.MASK_ANTIGRAVITY:
+		gravity_direction = -1
+		$Animation.flip_v = true
+	else:
+		gravity_direction = 1
+		$Animation.flip_v = false
+	
+func is_on_the_floor():
+	if gravity_direction == 1:
+		return is_on_floor()
+	else:
+		return is_on_ceiling()
