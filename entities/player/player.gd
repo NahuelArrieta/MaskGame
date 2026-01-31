@@ -23,7 +23,7 @@ func _process(_delta):
 			
 
 func _physics_process(delta):
-	$Animation.play("idle")
+	$Animation.play("idle_mask_fire")
 	
 	
 	if not is_on_floor():
@@ -39,12 +39,12 @@ func _physics_process(delta):
 	velocity.x = direction * speed
 	
 	move_and_slide()
-	# update_animation()
+	update_animation()
 	
 
 func update_animation():
 	if velocity.y != 0:
-		$Walking.stop()
+		#$Walking.stop()
 		$Animation.play("idle")
 		
 		if velocity.x != 0:
@@ -52,13 +52,13 @@ func update_animation():
 		return
 		
 	if velocity.x == 0:
-		$Walking.stop()
+		#$Walking.stop()
 		$Animation.play("idle")
 	else:
-		$Animation.play("moving")
+		$Animation.play("fire_mask_left")
 		$Animation.flip_h = false
-		if not $Walking.playing:
-			$Walking.play()
+		#if not $Walking.playing:
+			#$Walking.play()
 		
 		$Animation.flip_h = velocity.x < 0
 
