@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://bf1oj0pv6ufrt"]
+[gd_scene load_steps=2 format=3 uid="uid://c2ptupymdpeas"]
+
+[ext_resource type="Script" uid="uid://bxb0vlr5jy827" path="res://entities/camera/spootlight.gd" id="1_dnpr4"]
 
 [node name="Spootlight" type="CanvasModulate"]
 color = Color(0, 0, 0, 1)
+script = ExtResource("1_dnpr4")

@@ -1,10 +1,31 @@
 extends CharacterBody2D
 
-@export var speed = 300.0
+@export var speed = 70.0
 @export var jump_velocity = -450.0
 
+var current_mask: String = ""
+
+func _ready():
+	Global.mask_changed.connect(on_mask_changed)
+
+
+	
+
+
+func _process(_delta):
+	for action in Global.mask_map.keys():
+		if Input.is_action_just_pressed(action):
+			var selected = Global.mask_map[action]
+			if selected != current_mask:
+				current_mask = selected
+				Global.mask_changed.emit(current_mask)
+			break
+			
 
 func _physics_process(delta):
+	$Animation.play("idle")
+	
+	
 	if not is_on_floor():
 		velocity.y += Global.gravity * delta 
 	
@@ -40,3 +61,6 @@ func update_animation():
 			$Walking.play()
 		
 		$Animation.flip_h = velocity.x < 0
+
+func on_mask_changed(mask: String):
+	$Light.visible = !(mask == Global.MASK_FIRE)
