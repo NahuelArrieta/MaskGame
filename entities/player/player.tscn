@@ -74,14 +74,6 @@ region = Rect2(314, 0, 157, 223)
 atlas = ExtResource("5_a1qjk")
 region = Rect2(471, 0, 157, 223)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wvtmh"]
-atlas = ExtResource("5_bectd")
-region = Rect2(5, 0, 125, 201)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7thud"]
-atlas = ExtResource("5_bectd")
-region = Rect2(130, 0, 125, 201)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_a1qjk"]
 atlas = ExtResource("5_bectd")
 region = Rect2(255, 0, 125, 201)
@@ -97,6 +89,14 @@ region = Rect2(505, 0, 125, 201)
 [sub_resource type="AtlasTexture" id="AtlasTexture_r633c"]
 atlas = ExtResource("5_bectd")
 region = Rect2(630, 0, 125, 201)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7thud"]
+atlas = ExtResource("5_bectd")
+region = Rect2(130, 0, 125, 201)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wvtmh"]
+atlas = ExtResource("5_bectd")
+region = Rect2(5, 0, 125, 201)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gx6sm"]
 atlas = ExtResource("3_fkugw")
@@ -347,12 +347,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wvtmh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7thud")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_a1qjk")
 }, {
 "duration": 1.0,
@@ -363,6 +357,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_r633c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7thud")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wvtmh")
 }],
 "loop": true,
 "name": &"left_mask_death",
@@ -559,7 +559,8 @@ shape = SubResource("RectangleShape2D_sfv1e")
 [node name="Animation" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_sglur")
-animation = &"up_mask_death"
+animation = &"left_mask_death"
+frame_progress = 0.151193
 
 [node name="Camera" parent="." instance=ExtResource("3_sglur")]
 
