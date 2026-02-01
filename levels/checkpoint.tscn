@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ciwbl5cc0afvj"]
 
 [ext_resource type="Script" uid="uid://b32b2ui2asa8j" path="res://levels/checkpoint.gd" id="1_dw2mh"]
-[ext_resource type="Texture2D" uid="uid://b23467xk86jr0" path="res://assets/images/checkpoint.png" id="2_yt13s"]
+[ext_resource type="Texture2D" uid="uid://6072vacgf7ih" path="res://assets/images/checkpoint 2.png" id="2_yt13s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t8853"]
 size = Vector2(20.2245, 55.5173)
@@ -15,7 +15,7 @@ shape = SubResource("RectangleShape2D_t8853")
 debug_color = Color(0.663241, 0.458688, 0.616081, 0.42)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.25, 0.293)
+scale = Vector2(0.05, 0.06)
 texture = ExtResource("2_yt13s")
 
 [node name="Marker" type="Marker2D" parent="."]
