@@ -5,6 +5,8 @@ extends CharacterBody2D
 
 @onready var player_light: PointLight2D = $Light
 
+var is_dead: bool = false
+
 var current_mask: String = Global.MASK_NONE
 var gravity_direction = 1
 
@@ -135,8 +137,19 @@ func is_on_the_floor():
 		return is_on_ceiling()
 		
 func die() -> void:
-	set_physics_process(false)
+	if is_dead:
+		return
+	is_dead = true
 	
+	$Death.play()
+	
+	set_physics_process(false)
+	player_light.color = Color.GRAY
+	await get_tree().create_timer(0.2).timeout
+	player_light.color = Color.DIM_GRAY
+	await get_tree().create_timer(0.2).timeout
+	player_light.color = Color.BLACK
+	await get_tree().create_timer(0.2).timeout
 	get_tree().reload_current_scene()
 	
 func touch_water() -> void:
