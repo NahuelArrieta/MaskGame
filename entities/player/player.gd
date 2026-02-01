@@ -3,12 +3,14 @@ extends CharacterBody2D
 @export var speed = 70.0
 @export var jump_velocity = -450.0
 
+@onready var player_light: PointLight2D = $Light
+
 var current_mask: String = Global.MASK_NONE
 var gravity_direction = 1
 
 var death_mask_energy: float = 100.0   
-var death_mask_energy_consume_speed: float = 20.0 
-var death_mask_energyregen_speed: float = 15.0
+var death_mask_energy_consume_speed: float = 10.0 
+var death_mask_energyregen_speed: float = 10.0
 var current_death_mask_energy: float = 100.0
 
 
@@ -35,11 +37,14 @@ func _process(_delta):
 		current_death_mask_energy -= death_mask_energy_consume_speed * _delta
 		if current_death_mask_energy <= 0:
 			current_death_mask_energy = 0
-			die() # Se acabó la energía
+			die() 
+		player_light.color = Color.WHITE.lerp(Color("072c21"), (100 - current_death_mask_energy)/100)	
 	elif not is_using_death_mask and current_death_mask_energy < death_mask_energy:
-		# Regenerar energía
 		current_death_mask_energy += death_mask_energyregen_speed * _delta
 		current_death_mask_energy = min(current_death_mask_energy, death_mask_energy)
+		player_light.color = Color.WHITE
+		
+	
  
 
 func _physics_process(delta):

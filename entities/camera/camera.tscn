@@ -13,3 +13,11 @@ drag_vertical_enabled = true
 script = ExtResource("1_y2wxd")
 
 [node name="HUD" parent="." instance=ExtResource("2_m8se4")]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.0627451, 0.282353, 0.219608, 1)
+metadata/_edit_use_anchors_ = true
