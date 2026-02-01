@@ -3935,5 +3935,8 @@ autoplay = true
 
 [node name="Checkpoints" type="Node" parent="."]
 
+[node name="Checkpoint2" parent="." instance=ExtResource("11_prnqx")]
+position = Vector2(164, 139)
+
 [node name="Checkpoint" parent="." instance=ExtResource("11_prnqx")]
-position = Vector2(158, 137)
+position = Vector2(497, 168)

@@ -21,6 +21,9 @@ var current_death_mask_energy: float = 100.0
 func _ready():
 	Global.mask_changed.connect(on_mask_changed)
 	
+	update_animation()
+	Global.mask_changed.emit(current_mask)
+	
 
 func _process(_delta):
 	for action in Global.mask_map.keys():
@@ -140,6 +143,8 @@ func die() -> void:
 	if is_dead:
 		return
 	is_dead = true
+	velocity.x = 0
+	update_animation()
 	
 	$Death.play()
 	
