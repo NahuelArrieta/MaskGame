@@ -1,20 +1,20 @@
 [gd_scene load_steps=3 format=3 uid="uid://bp0jw2fh6phtm"]
 
 [ext_resource type="Script" uid="uid://bk3l1ac607mfx" path="res://entities/waterLeak/water_leak.gd" id="1_tk64l"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_tk64l"]
+[ext_resource type="Texture2D" uid="uid://dcx078xyn5epj" path="res://assets/images/tube.png" id="2_ksu2s"]
 
 [node name="WaterLeak" type="Node2D"]
+position = Vector2(0, -1)
 script = ExtResource("1_tk64l")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1.35525e-20, 2.38419e-07)
-scale = Vector2(41.5, 37.5)
-texture = SubResource("PlaceholderTexture2D_tk64l")
+position = Vector2(-2, -7)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_ksu2s")
 
 [node name="Timer" type="Timer" parent="."]
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(0, 18)
+position = Vector2(0, 1)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
