@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bmh52x3pf5wil"
+path="res://.godot/imported/Four Voices Whispering  Horror Film Sound Effects - WXYZVNNE (youtube).mp3-e6f34faabbf0b06b57d991ba2c35f275.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Four Voices Whispering  Horror Film Sound Effects - WXYZVNNE (youtube).mp3"
+dest_files=["res://.godot/imported/Four Voices Whispering  Horror Film Sound Effects - WXYZVNNE (youtube).mp3-e6f34faabbf0b06b57d991ba2c35f275.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
