@@ -8,35 +8,6 @@
 [ext_resource type="AudioStream" uid="uid://b2nrfajccdgp7" path="res://assets/audio/Burning Logs The Calming Sound of Fire - Mangrove (youtube).mp3" id="6_2rhnf"]
 [ext_resource type="AudioStream" uid="uid://btnxjs0pgi1n8" path="res://assets/audio/DARK AMBIENT MUSIC  Tribal Voodoo Vibes - Rest for the Wicked (youtube) (mp3cut.net).mp3" id="7_o027c"]
 
-[sub_resource type="Animation" id="Animation_d0rr7"]
-resource_name = "intro"
-length = 37.0
-step = 0.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 7.80598, 19.1942, 28.304),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("2_o027c"), ExtResource("3_mavnb"), ExtResource("4_o027c"), ExtResource("5_1c7jj")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AudioStreamPlayer:stream")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 40),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [ExtResource("7_o027c"), ExtResource("7_o027c")]
-}
-
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mavnb"]
 load_path = "res://.godot/imported/diapositiva 1.png-00c1efdf88402e06daaec60f217ccea0.ctex"
 
@@ -65,6 +36,35 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [ExtResource("6_2rhnf")]
+}
+
+[sub_resource type="Animation" id="Animation_d0rr7"]
+resource_name = "intro"
+length = 37.0
+step = 0.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 7.80598, 19.1942, 28.304),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_o027c"), ExtResource("3_mavnb"), ExtResource("4_o027c"), ExtResource("5_1c7jj")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer:stream")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 40),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("7_o027c"), ExtResource("7_o027c")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xsd0a"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://cf7nfskwfoq0t"]
+[gd_scene load_steps=18 format=4 uid="uid://cf7nfskwfoq0t"]
 
 [ext_resource type="PackedScene" uid="uid://npn26jw3fcgm" path="res://entities/player/player.tscn" id="1_1ccbj"]
 [ext_resource type="Script" uid="uid://c817ugdfmt03i" path="res://levels/level.gd" id="1_alcrw"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bp0jw2fh6phtm" path="res://entities/waterLeak/water_leak.tscn" id="6_uve4v"]
 [ext_resource type="AudioStream" uid="uid://btnxjs0pgi1n8" path="res://assets/audio/DARK AMBIENT MUSIC  Tribal Voodoo Vibes - Rest for the Wicked (youtube) (mp3cut.net).mp3" id="7_uve4v"]
 [ext_resource type="PackedScene" uid="uid://ciwbl5cc0afvj" path="res://levels/checkpoint.tscn" id="11_prnqx"]
+[ext_resource type="PackedScene" uid="uid://cjyuopnrt2kig" path="res://levels/chest.tscn" id="12_omdo6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yo1qe"]
 texture = ExtResource("3_vv8iv")
@@ -3893,7 +3894,7 @@ texture = ExtResource("1_vv8iv")
 stretch_mode = 1
 
 [node name="Player" parent="." instance=ExtResource("1_1ccbj")]
-position = Vector2(223, 102)
+position = Vector2(208, 123)
 
 [node name="TileMap" type="TileMapLayer" parent="."]
 position = Vector2(-1, 0)
@@ -4314,5 +4315,7 @@ stream = ExtResource("7_uve4v")
 autoplay = true
 
 [node name="Spootlight" parent="." instance=ExtResource("3_yo1qe")]
-visible = false
 color = Color(0, 0, 0, 1)
+
+[node name="Chest" parent="." instance=ExtResource("12_omdo6")]
+position = Vector2(53, 1076)

@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://cuy85xs8mavq4"]
+
+[ext_resource type="Texture2D" uid="uid://bbuuiylthllf3" path="res://assets/images/image 1 (1).png" id="1_0fbet"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_left = 7.0
+offset_top = -7.0
+offset_right = 1913.0
+offset_bottom = 1072.0
+texture = ExtResource("1_0fbet")
+expand_mode = 2
+stretch_mode = 3
