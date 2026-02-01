@@ -3,9 +3,10 @@ extends Node
 ## Constants
 const gravity = 980.0
 
-const MASK_FIRE = "MASK_FIRE"
-const MASK_DEATH = "MASK_DEATH"
-const MASK_ANTIGRAVITY = "MASK_ANTIGRAVITY"
+const MASK_FIRE = "mask_fire"
+const MASK_DEATH = "mask_death"
+const MASK_ANTIGRAVITY = "mask_gravity"
+const MASK_NONE = "normal"
 	
 var mask_map = {
 	"MASK_FIRE_KEY": MASK_FIRE,
