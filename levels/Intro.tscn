@@ -1,0 +1,108 @@
+[gd_scene load_steps=12 format=3 uid="uid://5qwlousfuo5u"]
+
+[ext_resource type="Script" uid="uid://bognj22tyd3p7" path="res://levels/intro.gd" id="1_mavnb"]
+[ext_resource type="Texture2D" uid="uid://culvxnlq0u1fa" path="res://assets/images/intro/diapositiva 1 (1) (1).png" id="2_o027c"]
+[ext_resource type="Texture2D" uid="uid://bmjbki37qugol" path="res://assets/images/intro/diapositiva 7.png" id="3_mavnb"]
+[ext_resource type="Texture2D" uid="uid://drsbukewjwoai" path="res://assets/images/intro/diapositiva 4 (2) (1).png" id="4_o027c"]
+[ext_resource type="Texture2D" uid="uid://bbii81h82ru6a" path="res://assets/images/intro/diapositiva 5 (2) (1).png" id="5_1c7jj"]
+[ext_resource type="AudioStream" uid="uid://b2nrfajccdgp7" path="res://assets/audio/Burning Logs The Calming Sound of Fire - Mangrove (youtube).mp3" id="6_2rhnf"]
+[ext_resource type="AudioStream" uid="uid://btnxjs0pgi1n8" path="res://assets/audio/DARK AMBIENT MUSIC  Tribal Voodoo Vibes - Rest for the Wicked (youtube) (mp3cut.net).mp3" id="7_o027c"]
+
+[sub_resource type="Animation" id="Animation_d0rr7"]
+resource_name = "intro"
+length = 37.0
+step = 0.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 7.80598, 19.1942, 28.304),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_o027c"), ExtResource("3_mavnb"), ExtResource("4_o027c"), ExtResource("5_1c7jj")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer:stream")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 40),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("7_o027c"), ExtResource("7_o027c")]
+}
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mavnb"]
+load_path = "res://.godot/imported/diapositiva 1.png-00c1efdf88402e06daaec60f217ccea0.ctex"
+
+[sub_resource type="Animation" id="Animation_wby50"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("CompressedTexture2D_mavnb")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer:stream")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_2rhnf")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xsd0a"]
+_data = {
+&"RESET": SubResource("Animation_wby50"),
+&"intro": SubResource("Animation_d0rr7")
+}
+
+[node name="Intro_tscn" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mavnb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_xsd0a")
+}
+autoplay = "intro"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_2rhnf")
+volume_db = 4.0
+autoplay = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.999527, 1.00446)
+texture = SubResource("CompressedTexture2D_mavnb")
+expand_mode = 2
+stretch_mode = 6
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
