@@ -1,30 +1,50 @@
-[gd_scene load_steps=3 format=3 uid="uid://4vllgqidssvv"]
+[gd_scene load_steps=5 format=3 uid="uid://4vllgqidssvv"]
 
 [ext_resource type="Script" uid="uid://df3ptq48aqe32" path="res://ui/HUD/hud.gd" id="1_1e5it"]
-[ext_resource type="Texture2D" uid="uid://xmw2b1bg1cqc" path="res://icon.svg" id="1_sv3wa"]
+[ext_resource type="Texture2D" uid="uid://yegvwvp8tu01" path="res://assets/images/Gemini_Generated_Image_1vh5tz1vh5tz1vh5 2.png" id="2_4mj14"]
+[ext_resource type="Texture2D" uid="uid://cx5ibbfypge1s" path="res://assets/images/image 64.png" id="2_67cnd"]
+[ext_resource type="Texture2D" uid="uid://bgg2oqeosrcnp" path="res://assets/images/Gemini_Generated_Image_f89amff89amff89a 2.png" id="4_4mj14"]
 
 [node name="HUD" type="CanvasLayer"]
 
-[node name="VBoxContainer" type="HBoxContainer" parent="."]
+[node name="VBoxContainer" type="Control" parent="."]
+layout_mode = 3
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 10.0
-offset_top = -138.0
-offset_right = 402.0
-offset_bottom = -10.0
+offset_left = -8.0
+offset_top = -179.0
+offset_right = 4436.0
+offset_bottom = 1653.0
 grow_vertical = 0
+scale = Vector2(0.1, 0.1)
 pivot_offset = Vector2(10, -5)
 script = ExtResource("1_1e5it")
 
 [node name="Mask Fire" type="TextureRect" parent="VBoxContainer"]
 layout_mode = 2
-texture = ExtResource("1_sv3wa")
-
-[node name="Mask Gravity" type="TextureRect" parent="VBoxContainer"]
-layout_mode = 2
-texture = ExtResource("1_sv3wa")
+offset_left = 250.0
+offset_top = -5.00061
+offset_right = 2082.0
+offset_bottom = 1827.0
+texture = ExtResource("2_4mj14")
+expand_mode = 2
 
 [node name="Mask Death" type="TextureRect" parent="VBoxContainer"]
 layout_mode = 2
-texture = ExtResource("1_sv3wa")
+offset_left = 2200.0
+offset_top = -725.0
+offset_right = 3468.0
+offset_bottom = 1107.0
+scale = Vector2(1.4, 1.4)
+size_flags_horizontal = 3
+texture = ExtResource("2_67cnd")
+stretch_mode = 1
+
+[node name="Mask Gravity" type="TextureRect" parent="VBoxContainer"]
+layout_mode = 2
+offset_left = 4160.0
+offset_top = -25.0
+offset_right = 5496.0
+offset_bottom = 1807.0
+texture = ExtResource("4_4mj14")
