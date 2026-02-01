@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://4vllgqidssvv"]
+
+[ext_resource type="Script" uid="uid://df3ptq48aqe32" path="res://ui/HUD/hud.gd" id="1_1e5it"]
+[ext_resource type="Texture2D" uid="uid://xmw2b1bg1cqc" path="res://icon.svg" id="1_sv3wa"]
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="VBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -138.0
+offset_right = 402.0
+offset_bottom = -10.0
+grow_vertical = 0
+pivot_offset = Vector2(10, -5)
+script = ExtResource("1_1e5it")
+
+[node name="Mask Fire" type="TextureRect" parent="VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_sv3wa")
+
+[node name="Mask Gravity" type="TextureRect" parent="VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_sv3wa")
+
+[node name="Mask Death" type="TextureRect" parent="VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_sv3wa")
