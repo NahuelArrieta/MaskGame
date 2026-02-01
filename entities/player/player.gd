@@ -2,10 +2,10 @@ extends CharacterBody2D
 
 @export var speed = 70.0
 @export var jump_velocity = -450.0
+@export var is_dead: bool = false
 
 @onready var player_light: PointLight2D = $Light
 
-var is_dead: bool = false
 
 var current_mask: String = Global.MASK_NONE
 var gravity_direction = 1
@@ -150,7 +150,8 @@ func die() -> void:
 	await get_tree().create_timer(0.2).timeout
 	player_light.color = Color.BLACK
 	await get_tree().create_timer(0.2).timeout
-	get_tree().reload_current_scene()
+	
+	Global.die.emit()
 	
 func touch_water() -> void:
 	if current_mask == Global.MASK_FIRE:

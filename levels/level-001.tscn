@@ -1,6 +1,7 @@
-[gd_scene load_steps=16 format=4 uid="uid://cf7nfskwfoq0t"]
+[gd_scene load_steps=18 format=4 uid="uid://cf7nfskwfoq0t"]
 
 [ext_resource type="PackedScene" uid="uid://npn26jw3fcgm" path="res://entities/player/player.tscn" id="1_1ccbj"]
+[ext_resource type="Script" uid="uid://c817ugdfmt03i" path="res://levels/level.gd" id="1_alcrw"]
 [ext_resource type="Texture2D" uid="uid://dur240b54u062" path="res://assets/images/background.png" id="1_vv8iv"]
 [ext_resource type="Texture2D" uid="uid://cj4mgux7omfik" path="res://assets/images/floor.png" id="3_vv8iv"]
 [ext_resource type="PackedScene" uid="uid://c2ptupymdpeas" path="res://entities/camera/spootlight.tscn" id="3_yo1qe"]
@@ -9,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://devptsfvgp1ft" path="res://entities/spikes/spikes.tscn" id="6_dx3he"]
 [ext_resource type="PackedScene" uid="uid://bp0jw2fh6phtm" path="res://entities/waterLeak/water_leak.tscn" id="6_uve4v"]
 [ext_resource type="AudioStream" uid="uid://btnxjs0pgi1n8" path="res://assets/audio/DARK AMBIENT MUSIC  Tribal Voodoo Vibes - Rest for the Wicked (youtube) (mp3cut.net).mp3" id="7_uve4v"]
+[ext_resource type="PackedScene" uid="uid://ciwbl5cc0afvj" path="res://levels/checkpoint.tscn" id="11_prnqx"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_yo1qe"]
 
@@ -3883,6 +3885,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_cyoxo")
 
 [node name="Level" type="Node2D"]
+script = ExtResource("1_alcrw")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 37680.0
@@ -3929,3 +3932,8 @@ color = Color(0, 0, 0, 1)
 [node name="NormalMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_uve4v")
 autoplay = true
+
+[node name="Checkpoints" type="Node" parent="."]
+
+[node name="Checkpoint" parent="." instance=ExtResource("11_prnqx")]
+position = Vector2(158, 137)
