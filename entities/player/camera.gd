@@ -5,6 +5,11 @@ extends Camera2D
 func _ready():
 	if tilemap_layer:
 		setup_camera_limits()
+	
+	Global.mask_changed.connect(on_mask_changed)
+	
+func on_mask_changed(mask: String):
+	$Vignnete.visible = mask == Global.MASK_FIRE
 
 func setup_camera_limits():
 	# Obtenemos el área usada en coordenadas de tiles
