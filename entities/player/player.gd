@@ -6,6 +6,14 @@ extends CharacterBody2D
 var current_mask: String = Global.MASK_NONE
 var gravity_direction = 1
 
+var death_mask_energy: float = 100.0   
+var death_mask_energy_consume_speed: float = 20.0 
+var death_mask_energyregen_speed: float = 15.0
+var current_death_mask_energy: float = 100.0
+
+
+
+
 func _ready():
 	Global.mask_changed.connect(on_mask_changed)
 	
@@ -21,6 +29,17 @@ func _process(_delta):
 			Global.mask_changed.emit(current_mask)
 			break
 			
+	var is_using_death_mask = current_mask == Global.MASK_DEATH
+	
+	if is_using_death_mask and current_death_mask_energy > 0:
+		current_death_mask_energy -= death_mask_energy_consume_speed * _delta
+		if current_death_mask_energy <= 0:
+			current_death_mask_energy = 0
+			die() # Se acabó la energía
+	elif not is_using_death_mask and current_death_mask_energy < death_mask_energy:
+		# Regenerar energía
+		current_death_mask_energy += death_mask_energyregen_speed * _delta
+		current_death_mask_energy = min(current_death_mask_energy, death_mask_energy)
  
 
 func _physics_process(delta):
