@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=4 uid="uid://cf7nfskwfoq0t"]
+[gd_scene load_steps=17 format=4 uid="uid://cf7nfskwfoq0t"]
 
 [ext_resource type="PackedScene" uid="uid://npn26jw3fcgm" path="res://entities/player/player.tscn" id="1_1ccbj"]
+[ext_resource type="Texture2D" uid="uid://dur240b54u062" path="res://assets/images/background.png" id="1_vv8iv"]
 [ext_resource type="Texture2D" uid="uid://2c440sfv10qv" path="res://platform.png" id="2_rnme4"]
 [ext_resource type="Texture2D" uid="uid://xmw2b1bg1cqc" path="res://icon.svg" id="2_wpgob"]
 [ext_resource type="PackedScene" uid="uid://c2ptupymdpeas" path="res://entities/camera/spootlight.tscn" id="3_yo1qe"]
@@ -8,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://devptsfvgp1ft" path="res://entities/spikes/spikes.tscn" id="6_dx3he"]
 [ext_resource type="PackedScene" uid="uid://bp0jw2fh6phtm" path="res://entities/waterLeak/water_leak.tscn" id="6_uve4v"]
 [ext_resource type="AudioStream" uid="uid://btnxjs0pgi1n8" path="res://assets/audio/DARK AMBIENT MUSIC  Tribal Voodoo Vibes - Rest for the Wicked (youtube) (mp3cut.net).mp3" id="7_uve4v"]
+[ext_resource type="PackedScene" uid="uid://o7pyqcdrutq1" path="res://entities/waterLeak/water_drop.tscn" id="8_alcrw"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_yo1qe"]
 
@@ -97,7 +99,15 @@ sources/0 = SubResource("TileSetAtlasSource_cyoxo")
 
 [node name="Level" type="Node2D"]
 
-[node name="ColorRect" type="Sprite2D" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 37680.0
+offset_bottom = 14600.0
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_vv8iv")
+stretch_mode = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(943.75, 364.75)
 scale = Vector2(1888.5, 730.5)
 texture = SubResource("PlaceholderTexture2D_yo1qe")
@@ -120,6 +130,8 @@ script = ExtResource("5_wpgob")
 
 [node name="WaterLeak" parent="." instance=ExtResource("6_uve4v")]
 position = Vector2(305, 24)
+tiempo_entre_gotas = 1.0
+gota_scene = ExtResource("8_alcrw")
 
 [node name="Spikes" parent="." instance=ExtResource("6_dx3he")]
 position = Vector2(241, 279)
@@ -127,6 +139,8 @@ position = Vector2(241, 279)
 [node name="WaterLeak2" parent="." instance=ExtResource("6_uve4v")]
 position = Vector2(205, 20)
 tiempo_entre_gotas = 0.3
+gota_scene = ExtResource("8_alcrw")
+
 [node name="NormalMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_uve4v")
 autoplay = true
