@@ -111,8 +111,10 @@ func is_on_the_floor():
 		return is_on_ceiling()
 		
 func die() -> void:
-	print("El jugador ha muerto")
-	# Opcional: Pausar el proceso para que no se mueva al morir
 	set_physics_process(false)
 	
 	get_tree().reload_current_scene()
+	
+func touch_water() -> void:
+	if current_mask == Global.MASK_FIRE:
+		die()

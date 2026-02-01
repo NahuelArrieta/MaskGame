@@ -563,7 +563,7 @@ shape = SubResource("RectangleShape2D_sfv1e")
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_sglur")
 animation = &"left_mask_death"
-frame_progress = 0.151193
+frame_progress = 0.797396
 
 [node name="Camera" parent="." instance=ExtResource("3_sglur")]
 
