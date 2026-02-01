@@ -16,3 +16,5 @@ var mask_map = {
 
 ## Signals
 signal mask_changed(current_mask: String);
+signal die();
+signal checkpointReaced(checkpoint: Area2D)
