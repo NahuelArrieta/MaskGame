@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d2wpwd8uykfbh"
+path="res://.godot/imported/Space_Horror_Sci-Fi Atmosphere_Sound Effect - Free Effects For Clips and Ambient Music and Sound (youtube).mp3-01d2061cef5723612603e41aaf3513e0.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Space_Horror_Sci-Fi Atmosphere_Sound Effect - Free Effects For Clips and Ambient Music and Sound (youtube).mp3"
+dest_files=["res://.godot/imported/Space_Horror_Sci-Fi Atmosphere_Sound Effect - Free Effects For Clips and Ambient Music and Sound (youtube).mp3-01d2061cef5723612603e41aaf3513e0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

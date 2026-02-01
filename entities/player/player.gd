@@ -20,6 +20,8 @@ func _process(_delta):
 				current_mask = Global.MASK_NONE
 			Global.mask_changed.emit(current_mask)
 			break
+			
+ 
 
 func _physics_process(delta):
 	
@@ -63,6 +65,30 @@ func update_animation():
 		
 		$Animation.flip_h = velocity.x < 0
 		
+		
+func change_music():
+	# Lista de todos tus nodos de música
+	var music_nodes = [$MusicDeath, $MusicFire, $MusicGravity, $NormalMusic]
+	
+	# Detenemos todos de forma segura
+	for music in music_nodes:
+		if music != null: # Esto evita el crash si el nodo no existe
+			music.stop()
+	
+	# Reproducimos la que corresponde
+	if current_mask == Global.MASK_DEATH:
+		$MusicDeath.play()
+	elif current_mask == Global.MASK_FIRE:
+		$MusicFire.play()
+	elif current_mask == Global.MASK_ANTIGRAVITY:
+		$MusicGravity.play()
+	else:
+		# Si no hay máscara, vuelve la música base
+		if $NormalMusic != null:
+			$NormalMusic.play()
+	
+	
+	
 func on_mask_changed(mask: String):
 	## Fire mask
 	$Light.visible = !(mask == Global.MASK_FIRE)
@@ -74,7 +100,8 @@ func on_mask_changed(mask: String):
 	else:
 		gravity_direction = 1
 		$Animation.flip_v = false
-	
+		
+	change_music()
 	update_animation()
 	
 func is_on_the_floor():
