@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=4 uid="uid://cf7nfskwfoq0t"]
+[gd_scene load_steps=13 format=4 uid="uid://cf7nfskwfoq0t"]
 
 [ext_resource type="PackedScene" uid="uid://npn26jw3fcgm" path="res://entities/player/player.tscn" id="1_1ccbj"]
 [ext_resource type="Texture2D" uid="uid://2c440sfv10qv" path="res://platform.png" id="2_rnme4"]
 [ext_resource type="Texture2D" uid="uid://xmw2b1bg1cqc" path="res://icon.svg" id="2_wpgob"]
 [ext_resource type="PackedScene" uid="uid://c2ptupymdpeas" path="res://entities/camera/spootlight.tscn" id="3_yo1qe"]
 [ext_resource type="Script" uid="uid://kq5vaan7aovn" path="res://levels/death_platforms.gd" id="5_wpgob"]
+[ext_resource type="PackedScene" uid="uid://devptsfvgp1ft" path="res://entities/spikes/spikes.tscn" id="6_dx3he"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_yo1qe"]
 
@@ -106,9 +107,13 @@ tile_map_data = PackedByteArray("AAAAAAMAAQAAAAAAAAABAAMAAQAAAAAAAAACAAMAAQAAAAA
 tile_set = SubResource("TileSet_cyoxo")
 
 [node name="Spootlight" parent="." instance=ExtResource("3_yo1qe")]
+visible = false
 
 [node name="DeathPlatforms" type="TileMapLayer" parent="."]
 material = SubResource("CanvasItemMaterial_wpgob")
 tile_map_data = PackedByteArray("AAAIAAMAAAABAAAAAAAJAAMAAAABAAAAAAAKAAMAAAABAAAAAAAJAAQAAAABAAAAAAAIAAQAAAABAAAAAAAKAAQAAAABAAAAAAAHAAMAAAABAAAAAAAHAAQAAAABAAAAAAALAAIAAAABAAAAAAALAAMAAAABAAAAAAALAAQAAAABAAAAAAANAAcAAAABAAAAAAANAAYAAAABAAAAAAAOAAYAAAABAAAAAAA=")
 tile_set = SubResource("TileSet_wpgob")
 script = ExtResource("5_wpgob")
+
+[node name="Spikes" parent="." instance=ExtResource("6_dx3he")]
+position = Vector2(241, 279)
