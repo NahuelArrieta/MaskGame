@@ -19,6 +19,6 @@ scale = Vector2(0.25, 0.293)
 texture = ExtResource("2_yt13s")
 
 [node name="Marker" type="Marker2D" parent="."]
-position = Vector2(0, -87)
+position = Vector2(0, -49)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
