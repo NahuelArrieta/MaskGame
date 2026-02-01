@@ -44,25 +44,29 @@ func _physics_process(delta):
 	
 
 func update_animation():
-	if velocity.y != 0:
-		#$Walking.stop()
-		$Animation.play("idle_mask_fire")
+	# 1. ESTADO: EN EL AIRE
+	if not is_on_floor():
+		$Animation.play("up_normal")
+
 		
+		# Permitir giro en el aire
 		if velocity.x != 0:
 			$Animation.flip_h = velocity.x < 0
-		return
 		
-	if velocity.x == 0:
-		#$Walking.stop()
-		$Animation.play("idle_mask_fire")
-	else:
-		$Animation.play("fire_mask_left")
-		$Animation.flip_h = false
-		#if not $Walking.playing:
-			#$Walking.play()
-		
-		$Animation.flip_h = velocity.x < 0
+		# Salimos de la función para no tocar nada del suelo
+		return 
 
+	# 2. ESTADO: EN EL SUELO (Solo llega aquí si is_on_floor es true)
+	if velocity.x == 0:
+		if $Animation.animation != "idle_normal":
+			$Animation.play("idle_normal")
+	else:
+		if $Animation.animation != "left_normal":
+			$Animation.play("left_normal")
+		
+		# Voltear según dirección al caminar
+		$Animation.flip_h = velocity.x < 0
+		
 func on_mask_changed(mask: String):
 	## Fire mask
 	$Light.visible = !(mask == Global.MASK_FIRE)
