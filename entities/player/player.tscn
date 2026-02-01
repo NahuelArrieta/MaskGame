@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://bpmotah0yh7mm" path="res://assets/sprites/up_normal.png" id="12_j3ovn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sfv1e"]
-size = Vector2(32, 32)
+size = Vector2(20, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_24ehl"]
 atlas = ExtResource("3_qiwj3")
@@ -557,14 +557,12 @@ script = ExtResource("1_symyc")
 shape = SubResource("RectangleShape2D_sfv1e")
 
 [node name="Animation" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -7)
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_sglur")
-animation = &"left_normal"
+animation = &"up_mask_death"
 
 [node name="Camera" parent="." instance=ExtResource("3_sglur")]
 
 [node name="Light" type="PointLight2D" parent="."]
-position = Vector2(0, 7)
 blend_mode = 2
 texture = SubResource("GradientTexture2D_bls4j")
