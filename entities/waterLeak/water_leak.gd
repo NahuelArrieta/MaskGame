@@ -7,6 +7,8 @@ extends Node2D
 @onready var timer = $Timer
 @onready var marker = $Marker2D
 
+
+
 func _ready():
 	# Configuramos el timer con el valor que elegiste
 	timer.wait_time = tiempo_entre_gotas

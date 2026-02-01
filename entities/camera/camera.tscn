@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cghftgvw3dec5"]
+[gd_scene load_steps=3 format=3 uid="uid://cghftgvw3dec5"]
 
 [ext_resource type="Script" uid="uid://bjxkhjmmbo6pp" path="res://entities/player/camera.gd" id="1_y2wxd"]
+[ext_resource type="PackedScene" uid="uid://4vllgqidssvv" path="res://ui/HUD/hud.tscn" id="2_m8se4"]
 
 [node name="Camera" type="Camera2D"]
 zoom = Vector2(3, 3)
@@ -10,3 +11,5 @@ position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 script = ExtResource("1_y2wxd")
+
+[node name="HUD" parent="." instance=ExtResource("2_m8se4")]
