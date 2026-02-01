@@ -1,0 +1,100 @@
+[gd_scene load_steps=10 format=3 uid="uid://bs28af64l66ym"]
+
+[ext_resource type="Texture2D" uid="uid://rk2elgh3q3k6" path="res://assets/images/intro/diapositiva 1.png" id="1_iysgs"]
+[ext_resource type="Texture2D" uid="uid://c1io6ruhjrc3j" path="res://assets/images/intro/diapositiva 2 (1).png" id="2_1rpvy"]
+[ext_resource type="Texture2D" uid="uid://8tpju67xuec1" path="res://assets/images/intro/diapositiva 3 (1).png" id="3_6omm5"]
+[ext_resource type="Texture2D" uid="uid://c587gehmnoxgi" path="res://assets/images/intro/diapositiva 4 (1).png" id="4_4ad6s"]
+[ext_resource type="Texture2D" uid="uid://8i32ww4708ix" path="res://assets/images/intro/diapositiva 5 (1).png" id="5_7136s"]
+[ext_resource type="AudioStream" uid="uid://b2nrfajccdgp7" path="res://assets/audio/Burning Logs The Calming Sound of Fire - Mangrove (youtube).mp3" id="6_eejac"]
+
+[sub_resource type="Animation" id="Animation_d0rr7"]
+resource_name = "intro"
+length = 25.0
+step = 0.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5, 10, 15, 20),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_iysgs"), ExtResource("2_1rpvy"), ExtResource("3_6omm5"), ExtResource("4_4ad6s"), ExtResource("5_7136s")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer:stream")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_eejac")]
+}
+
+[sub_resource type="Animation" id="Animation_wby50"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_iysgs")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer:stream")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_eejac")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xsd0a"]
+_data = {
+&"RESET": SubResource("Animation_wby50"),
+&"intro": SubResource("Animation_d0rr7")
+}
+
+[node name="Intro_tscn" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_xsd0a")
+}
+autoplay = "intro"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_eejac")
+volume_db = 4.386
+autoplay = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_iysgs")
+expand_mode = 1
+stretch_mode = 5
