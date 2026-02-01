@@ -1,4 +1,4 @@
-extends HBoxContainer
+extends Control
 
 # Colores para el estado
 var color_activo = Color(1, 1, 1, 1)      # Blanco intenso
