@@ -23,28 +23,30 @@ script = ExtResource("1_1e5it")
 
 [node name="Mask Fire" type="TextureRect" parent="VBoxContainer"]
 layout_mode = 2
-offset_left = 250.0
-offset_top = -5.00061
-offset_right = 2082.0
-offset_bottom = 1827.0
+offset_left = 270.0
+offset_top = 375.0
+offset_right = 2102.0
+offset_bottom = 2207.0
+scale = Vector2(0.8, 0.8)
 texture = ExtResource("2_4mj14")
 expand_mode = 2
 
 [node name="Mask Death" type="TextureRect" parent="VBoxContainer"]
 layout_mode = 2
 offset_left = 2200.0
-offset_top = -725.0
+offset_top = -175.0
 offset_right = 3468.0
-offset_bottom = 1107.0
-scale = Vector2(1.4, 1.4)
+offset_bottom = 1657.0
+scale = Vector2(1.1, 1.1)
 size_flags_horizontal = 3
 texture = ExtResource("2_67cnd")
 stretch_mode = 1
 
 [node name="Mask Gravity" type="TextureRect" parent="VBoxContainer"]
 layout_mode = 2
-offset_left = 4160.0
-offset_top = -25.0
-offset_right = 5496.0
-offset_bottom = 1807.0
+offset_left = 4200.0
+offset_top = 265.0
+offset_right = 5536.0
+offset_bottom = 2097.0
+scale = Vector2(0.9, 0.9)
 texture = ExtResource("4_4mj14")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://cf7nfskwfoq0t"]
+[gd_scene load_steps=17 format=4 uid="uid://cf7nfskwfoq0t"]
 
 [ext_resource type="PackedScene" uid="uid://npn26jw3fcgm" path="res://entities/player/player.tscn" id="1_1ccbj"]
 [ext_resource type="Texture2D" uid="uid://dur240b54u062" path="res://assets/images/background.png" id="1_vv8iv"]
@@ -136,11 +136,11 @@ position = Vector2(241, 279)
 [node name="WaterLeak2" parent="." instance=ExtResource("6_uve4v")]
 position = Vector2(205, 20)
 tiempo_entre_gotas = 0.3
+gota_scene = ExtResource("8_alcrw")
 
 [node name="Spootlight" parent="." instance=ExtResource("3_yo1qe")]
 visible = false
 color = Color(0, 0, 0, 1)
-gota_scene = ExtResource("8_alcrw")
 
 [node name="NormalMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_uve4v")
