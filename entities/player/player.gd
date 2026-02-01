@@ -3,7 +3,7 @@ extends CharacterBody2D
 @export var speed = 70.0
 @export var jump_velocity = -450.0
 
-var current_mask: String = ""
+var current_mask: String = Global.MASK_NONE
 var gravity_direction = 1
 
 func _ready():
@@ -57,7 +57,7 @@ func update_animation():
 		if $Animation.animation != idle_anim:
 			$Animation.play(idle_anim)
 	else:
-		var walk_anim = "run_" + anim_suffix # O "left_" según tus archivos
+		var walk_anim = "left_" + anim_suffix 
 		if $Animation.animation != walk_anim:
 			$Animation.play(walk_anim)
 		
