@@ -2,7 +2,7 @@ extends Node2D
 
 # Esta variable aparecerá en el Inspector de Godot
 @export var tiempo_entre_gotas: float = 1.0
-@export var gota_scene: PackedScene = preload("./water_drop.tscn")
+@export var gota_scene: PackedScene = preload("res://entities/waterLeak/water_drop.tscn")
 
 @onready var timer = $Timer
 @onready var marker = $Marker2D
